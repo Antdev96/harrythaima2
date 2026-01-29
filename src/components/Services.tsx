@@ -3,34 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Clock, Sparkles, Gift } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-// Service data with prices
-const mainServicesData = [
-  { id: 1, duration: 60, price: "50€", popular: true },
-  { id: 2, duration: 60, price: "55€", popular: false },
-  { id: 3, duration: 60, price: "55€", popular: false },
-  { id: 4, duration: 60, price: "45€", popular: false },
-  { id: 5, duration: 60, price: "50€", popular: true },
-  { id: 6, duration: 60, price: "85€", popular: true },
-  { id: 7, duration: 45, price: "40€", popular: false },
-];
+import { SERVICES, FOCUSED_SERVICES, BONOS } from "@/lib/prices";
 
-const focusedServicesData = [
-  { id: 8, duration: 30, price: "30€" },
-  { id: 9, duration: 30, price: "25€" },
-  { id: 10, duration: 20, price: "20€" },
-  { id: 11, duration: 20, price: "20€" },
-  { id: 12, duration: 30, price: "30€" },
-  { id: 13, duration: 25, price: "25€" },
-  { id: 14, duration: 20, price: "20€" },
-];
-
-// Bonos data
-const bonosData = [
-  { id: 1, serviceName: "Masaje Thai", originalPrice: 250, bonoPrice: 225 },
-  { id: 2, serviceName: "Masaje Relajante", originalPrice: 225, bonoPrice: 200 },
-  { id: 3, serviceName: "Masaje Deportivo", originalPrice: 250, bonoPrice: 225 },
-  { id: 4, serviceName: "Reflexología Podal", originalPrice: 200, bonoPrice: 175 },
-];
+// Use centralized price data
+const mainServicesData = SERVICES;
+const focusedServicesData = FOCUSED_SERVICES;
+const bonosData = BONOS; 
 
 const Services = () => {
   const { t } = useLanguage();

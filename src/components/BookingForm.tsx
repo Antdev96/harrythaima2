@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { SERVICES, FOCUSED_SERVICES } from "@/lib/prices"; 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -27,22 +28,7 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const WHATSAPP_NUMBER = "34622459959";
 // ============================================
 
-const servicesData = [
-  { id: "thai", duration: "60min", price: "50€" },
-  { id: "ayurvedic", duration: "60min", price: "65€" },
-  { id: "pindas", duration: "60min", price: "65€" },
-  { id: "relajante", duration: "60min", price: "50€" },
-  { id: "deportivo", duration: "60min", price: "55€" },
-  { id: "4-manos", duration: "60min", price: "90€" },
-  { id: "reflexologia", duration: "45min", price: "40€" },
-  { id: "30-min", duration: "30min", price: "30€" },
-  { id: "facial", duration: "30min", price: "30€" },
-  { id: "hombros", duration: "20min", price: "25€" },
-  { id: "cuello", duration: "20min", price: "25€" },
-  { id: "espalda", duration: "30min", price: "35€" },
-  { id: "piernas", duration: "30min", price: "30€" },
-  { id: "pies", duration: "20min", price: "25€" },
-];
+const servicesData = [...SERVICES, ...FOCUSED_SERVICES];
 
 const timeSlots = [
   "10:00", "11:00", "12:00", "13:00", 

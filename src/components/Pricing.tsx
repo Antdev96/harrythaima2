@@ -1,5 +1,6 @@
 import React from "react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { PRICING_CATEGORIES } from "@/lib/prices";
 
 const Pricing = () => {
   const { language } = useLanguage();
@@ -13,39 +14,16 @@ const Pricing = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6">
-          <div className="p-6 border rounded-md">
-            <h3 className="font-semibold mb-3">{language === 'es' ? 'Individual' : 'Individual'}</h3>
-            <ul className="text-muted-foreground space-y-1">
-              <li>30 min — 30€</li>
-              <li>60 min — 50€</li>
-              <li>90 min — 75€</li>
-            </ul>
-          </div>
-
-          <div className="p-6 border rounded-md">
-            <h3 className="font-semibold mb-3">{language === 'es' ? 'Parejas' : 'Couples'}</h3>
-            <ul className="text-muted-foreground space-y-1">
-              <li>30 min — 55€</li>
-              <li>60 min — 95€</li>
-              <li>90 min — 145€</li>
-            </ul>
-          </div>
-
-          <div className="p-6 border rounded-md">
-            <h3 className="font-semibold mb-3">Ayurvedic masaje</h3>
-            <ul className="text-muted-foreground space-y-1">
-              <li>60 min — 65€</li>
-              <li>90 min — 85€</li>
-            </ul>
-          </div>
-
-          <div className="p-6 border rounded-md">
-            <h3 className="font-semibold mb-3">Pinda cliente</h3>
-            <ul className="text-muted-foreground space-y-1">
-              <li>30 min — 35€</li>
-              <li>60 min — 65€</li>
-            </ul>
-          </div>
+          {PRICING_CATEGORIES.map((cat) => (
+            <div className="p-6 border rounded-md" key={cat.key}>
+              <h3 className="font-semibold mb-3">{language === 'es' ? cat.title.es : cat.title.en}</h3>
+              <ul className="text-muted-foreground space-y-1">
+                {cat.items.map((i) => (
+                  <li key={i.label}>{i.label} — {i.price}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
       </div>
     </section>
