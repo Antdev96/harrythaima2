@@ -6,7 +6,8 @@ export const translations = {
       services: "Servicios",
       about: "Sobre Nosotros",
       contact: "Contacto",
-      book: "Reservar Cita"
+      book: "Reservar Cita",
+      privacy: "Protección de Datos"
     },
     // Hero
     hero: {
@@ -116,7 +117,8 @@ export const translations = {
       services: "Services",
       about: "About Us",
       contact: "Contact",
-      book: "Book Now"
+      book: "Book Now",
+      privacy: "Privacy Policy"
     },
     // Hero
     hero: {

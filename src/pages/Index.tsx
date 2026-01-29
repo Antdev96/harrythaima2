@@ -5,8 +5,7 @@ import Pricing from "@/components/Pricing";
 import About from "@/components/About";
 import BookingForm from "@/components/BookingForm";
 import Contact from "@/components/Contact";
-import PrivacyPolicy from "@/components/PrivacyPolicy";
-import Footer from "@/components/Footer";
+import Footer from "@/components/Footer"; 
 
 const Index = () => {
   return (
@@ -19,7 +18,6 @@ const Index = () => {
         <About />
         <BookingForm />
         <Contact />
-        <PrivacyPolicy />
       </main>
       <Footer />
     </div>

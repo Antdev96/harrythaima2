@@ -1,5 +1,6 @@
 import { MapPin, Phone, Clock } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useLanguage();
@@ -32,9 +33,9 @@ const Footer = () => {
               <a href="#reservar" className="text-background/70 hover:text-background transition-colors">
                 {t.nav.book}
               </a>
-              <a href="#privacidad" className="text-background/70 hover:text-background transition-colors">
-                Protección de Datos
-              </a>
+              <Link to="/privacy" className="text-background/70 hover:text-background transition-colors">
+                {t.nav.privacy}
+              </Link> 
             </nav>
           </div>
 

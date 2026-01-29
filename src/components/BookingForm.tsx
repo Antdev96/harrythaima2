@@ -28,14 +28,12 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const WHATSAPP_NUMBER = "34622459959";
 // ============================================
 
-const servicesData = [...SERVICES, ...FOCUSED_SERVICES];
-
 const timeSlots = [
   "10:00", "11:00", "12:00", "13:00", 
   "16:00", "17:00", "18:00", "19:00"
 ];
 
-const BookingForm = () => {
+const BookingForm = () => { 
   const { t, language } = useLanguage();
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -50,16 +48,16 @@ const BookingForm = () => {
 
   const allServices = [
     ...t.services.items.map((item, index) => ({
-      id: servicesData[index]?.id || `service-${index}`,
+      id: SERVICES[index]?.id || `service-${index}`,
       name: item.name,
-      duration: servicesData[index]?.duration || "60min",
-      price: servicesData[index]?.price || "50€"
+      duration: SERVICES[index]?.duration ?? "",
+      price: SERVICES[index]?.price ?? ""
     })),
     ...t.services.focusedItems.map((item, index) => ({
-      id: servicesData[7 + index]?.id || `focused-${index}`,
+      id: FOCUSED_SERVICES[index]?.id || `focused-${index}`,
       name: item.name,
-      duration: servicesData[7 + index]?.duration || "30min",
-      price: servicesData[7 + index]?.price || "30€"
+      duration: FOCUSED_SERVICES[index]?.duration ?? "",
+      price: FOCUSED_SERVICES[index]?.price ?? ""
     }))
   ];
 
