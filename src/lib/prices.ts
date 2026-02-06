@@ -3,8 +3,8 @@ export const SERVICES = [
   { id: "ayurvedic", duration: "60min", price: "65€", popular: false },
   { id: "pindas", duration: "60min", price: "65€", popular: false },
   { id: "relajante", duration: "60min", price: "50€", popular: false },
-  { id: "deportivo", duration: "60min", price: "55€", popular: false },
-  { id: "4-manos", duration: "60min", price: "90€", popular: true },
+  { id: "deportivo", duration: "60min", price: "50€", popular: false },
+  { id: "4-manos", duration: "60min", price: "95€", popular: true },
   { id: "reflexologia", duration: "45min", price: "40€", popular: false },
 ];
 
